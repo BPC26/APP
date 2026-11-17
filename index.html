@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>BALAJI PIPE APP DATA</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2f3a9e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Balaji Pipe">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+
 <style>
 :root{--bg:#f4f6fb;--card:#fff;--tx:#1b2333;--mut:#6b7488;--pri:#2f3a9e;--ln:#e3e7f0;--ok:#0a7a3d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10131c;--card:#1a1f2d;--tx:#e8ebf4;--mut:#98a1b8;--pri:#8e9bff;--ln:#2a3144;--ok:#5fd68f;color-scheme:dark}}
@@ -427,6 +435,7 @@ tr.ponly{display:none}
 .shotfab{background:linear-gradient(145deg,#19c2b0,#0b7f93)!important;box-shadow:0 6px 16px rgba(11,127,147,.4),inset 0 1px 0 rgba(255,255,255,.4)!important}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:80;background:#111;color:#fff;border-radius:22px;padding:11px 18px;font-size:14px;font-weight:700;max-width:88vw;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .toast[hidden]{display:none}
+.pdffab{background:linear-gradient(145deg,#ff6b6b,#d6336c)!important;box-shadow:0 6px 16px rgba(214,51,108,.4),inset 0 1px 0 rgba(255,255,255,.4)!important}
 .calfab{background:linear-gradient(145deg,#ffa23d,#e8590c)!important;box-shadow:0 6px 16px rgba(232,89,12,.4),inset 0 1px 0 rgba(255,255,255,.4)!important}
 #fab[data-tab="all"] .so-only{display:none}
 #fab[data-tab="so"] .all-only{display:none}
@@ -466,7 +475,7 @@ tr.ponly{display:none}
 <div class="top"><div class="sb"><div class="sbi"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search product / code / group…" autocomplete="off"></div></div><button class="gear red" id="gear" title="Data update"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><i class="gd"></i></button></div>
 <div id="hd"></div>
 </div>
-<div id="fab" class="noprint fabwrap" data-tab="all"><div id="copyMsg" class="cmsg"></div><div id="copyMenu" class="cmenu" hidden><button type="button" data-m="code">Copy Code · Qty</button><button type="button" data-m="name">Copy Product · Qty</button><button type="button" data-m="sheet">Copy Excel Sheet</button></div><div id="fabItems" class="fabitems" hidden><div class="fabrow all-only"><span class="fablab">Screenshot</span><button id="shotFab" class="copyfab shotfab" type="button" aria-label="Screenshot" title="Screenshot">📸</button></div><div class="fabrow"><span class="fablab">Calculator</span><button id="calcFab" class="copyfab calfab" type="button" aria-label="Calculator" title="Calculator">🧮</button></div><div class="fabrow so-only"><span class="fablab">Database</span><button id="dbBtn" class="copyfab dbfab" type="button" aria-label="Database" title="Database">🗄️</button></div><div class="fabrow so-only"><span class="fablab">Copy</span><button id="copyBtn" class="copyfab" type="button" aria-label="Copy" title="Copy">📋</button></div></div><button id="fabMain" class="fabmain" type="button" aria-label="Menu" title="Menu">＋</button></div>
+<div id="fab" class="noprint fabwrap" data-tab="all"><div id="copyMsg" class="cmsg"></div><div id="copyMenu" class="cmenu" hidden><button type="button" data-m="code">Copy Code · Qty</button><button type="button" data-m="name">Copy Product · Qty</button><button type="button" data-m="sheet">Copy Excel Sheet</button></div><div id="fabItems" class="fabitems" hidden><div class="fabrow all-only"><span class="fablab">Screenshot</span><button id="shotFab" class="copyfab shotfab" type="button" aria-label="Screenshot" title="Screenshot">📸</button></div><div class="fabrow all-only"><span class="fablab">PDF</span><button id="pdfFab" class="copyfab pdffab" type="button" aria-label="PDF" title="PDF">📄</button></div><div class="fabrow"><span class="fablab">Calculator</span><button id="calcFab" class="copyfab calfab" type="button" aria-label="Calculator" title="Calculator">🧮</button></div><div class="fabrow so-only"><span class="fablab">Database</span><button id="dbBtn" class="copyfab dbfab" type="button" aria-label="Database" title="Database">🗄️</button></div><div class="fabrow so-only"><span class="fablab">Copy</span><button id="copyBtn" class="copyfab" type="button" aria-label="Copy" title="Copy">📋</button></div></div><button id="fabMain" class="fabmain" type="button" aria-label="Menu" title="Menu">＋</button></div>
 <div id="toast" class="toast noprint" hidden></div>
 <nav class="tabs noprint" id="bnav"><button class="tab on" id="tAll" type="button"><span class="ti">📋</span><span>All Data</span></button><button class="tab" id="tSo" type="button"><span class="ti">🧾</span><span>Sale Order</span></button><button class="tab" id="tHc" type="button"><span class="ti">🧮</span><span>Calculator</span></button></nav>
 <div id="panel">
@@ -2078,10 +2087,162 @@ const SHOT=(function(){
   G("shotFab").addEventListener("click",e=>{e.stopPropagation();if(!G("fabItems").hidden)G("fabMain").click();setTimeout(shoot,120);});
   return {shoot:shoot,render:render};
 })();
+/* ---- PDF (vector: zoom karne par bhi clear) ---- */
+const PDFX=(function(){
+  const G=id=>document.getElementById(id);
+  let tt=null;
+  function toast(m,ms){const t=G("toast");t.textContent=m;t.hidden=false;clearTimeout(tt);tt=setTimeout(()=>{t.hidden=true;},ms||2600);}
+  function nums(a){return a.split(",").map(Number);}
+  const WR=[].concat(nums("278,278,355,556,556,889,667,191,333,333,389,584,278,333,278,278"),Array(10).fill(556),nums("278,278,584,584,584,556,1015"),
+    nums("667,667,722,722,667,611,778,722,278,500,667,556,833,722,778,667,778,722,667,611,722,667,944,667,667,611"),
+    nums("278,278,278,469,556,333"),nums("556,556,500,556,556,278,556,556,222,222,500,222,833,556,556,556,556,333,500,278,556,500,722,500,500,500"),nums("334,260,334,584"));
+  const WB=[].concat(nums("278,333,474,556,556,889,722,238,333,333,389,584,278,333,278,278"),Array(10).fill(556),nums("333,333,584,584,584,611,975"),
+    nums("722,722,722,722,667,611,778,722,278,556,722,611,833,722,778,667,778,722,667,611,722,667,944,667,667,611"),
+    nums("333,278,333,584,556,333"),nums("556,611,556,611,556,333,611,611,278,278,556,278,889,611,611,611,611,389,556,333,611,556,778,556,556,500"),nums("389,280,389,584"));
+  const SPECIAL={0x2033:'"',0x2032:"'",0x2013:"\x96",0x2014:"\x97",0x2018:"\x91",0x2019:"\x92",0x201C:"\x93",0x201D:"\x94",0x2022:"\x95",0x20B9:"Rs.",0x2212:"-",0xA0:" ",0x2264:"<",0x2265:">"};
+  function enc(t){
+    t=String(t==null?"":t);let o="";
+    for(const ch of t){const c=ch.codePointAt(0);
+      if(SPECIAL[c]!==undefined)o+=SPECIAL[c];
+      else if(c>=32&&c<=126)o+=ch;
+      else if(c>=160&&c<=255)o+=ch;
+      else o+=(c<32?" ":"?");}
+    return o;
+  }
+  function cw(ch,b){const c=ch.charCodeAt(0);return ((c>=32&&c<=126)?(b?WB:WR)[c-32]:556);}
+  function sw(s,size,b){let w=0;for(let i=0;i<s.length;i++)w+=cw(s[i],b);return w*size/1000;}
+  function esc(s){return s.replace(/\\/g,"\\\\").replace(/\(/g,"\\(").replace(/\)/g,"\\)");}
+  function wrap(s,size,maxw,b){
+    s=enc(s);const words=s.split(/\s+/).filter(Boolean),lines=[];let cur="";
+    function push(){if(cur)lines.push(cur);cur="";}
+    words.forEach(w=>{
+      while(sw(w,size,b)>maxw){ // bahut lamba word: tod do
+        let k=1;while(k<w.length&&sw(w.slice(0,k+1),size,b)<=maxw)k++;
+        if(cur)push();lines.push(w.slice(0,k));w=w.slice(k);
+      }
+      const t=cur?cur+" "+w:w;
+      if(sw(t,size,b)<=maxw)cur=t;else{push();cur=w;}
+    });
+    push();return lines.length?lines:[""];
+  }
+  const PW=595.28,PH=841.89,M=28;
+  function build(title,sub,cols,rows){
+    const FS=9.5,LH=11.6,PV=4,HH=20,PAD=5,FOOT=M+10;
+    const fixed=cols.reduce((a,c)=>a+(c.w||0),0),flex=PW-2*M-fixed;
+    cols.forEach(c=>{if(!c.w)c.w=flex;});
+    const pages=[];let ops,y;
+    const T=(x,yy,s,f,sz,col)=>"BT /F"+f+" "+sz+" Tf "+col+" rg "+x.toFixed(2)+" "+yy.toFixed(2)+" Td ("+esc(s)+") Tj ET\n";
+    const R=(x,yy,w,h,col)=>col+" rg "+x.toFixed(2)+" "+yy.toFixed(2)+" "+w.toFixed(2)+" "+h.toFixed(2)+" re f\n";
+    function header(first){
+      if(first){
+        ops+=T(M,PH-M-14,enc("BALAJI PIPE APP DATA"),2,16,"0.18 0.23 0.62");
+        ops+=T(M,PH-M-29,enc(title),2,10.5,"0.1 0.1 0.1");
+        ops+=T(M,PH-M-42,enc(sub),1,8.5,"0.4 0.4 0.4");
+        y=PH-M-52;
+      }else{
+        ops+=T(M,PH-M-8,enc("BALAJI PIPE APP DATA  -  "+title),1,8,"0.4 0.4 0.4");
+        y=PH-M-16;
+      }
+      ops+=R(M,y-HH,PW-2*M,HH,"0.18 0.23 0.62");
+      let x=M;
+      cols.forEach(c=>{
+        const s=enc(c.t);
+        const tx=c.a==="r"?x+c.w-PAD-sw(s,FS,true):x+PAD;
+        ops+=T(tx,y-HH+6.5,s,2,FS,"1 1 1");x+=c.w;
+      });
+      y-=HH;
+    }
+    function newPage(first){if(ops)pages.push(ops);ops="";header(first);}
+    ops="";newPage(true);
+    rows.forEach((r,i)=>{
+      const cells=cols.map((c,j)=>c.wrap?wrap(r[j],FS,c.w-2*PAD,false):[enc(r[j])]);
+      const n=Math.max.apply(null,cells.map(a=>a.length)),rh=n*LH+2*PV;
+      if(y-rh<FOOT)newPage(false);
+      if(i%2===1)ops+=R(M,y-rh,PW-2*M,rh,"0.955 0.96 0.985");
+      ops+=R(M,y-rh,PW-2*M,0.4,"0.85 0.86 0.9");
+      let x=M;
+      cols.forEach((c,j)=>{
+        cells[j].forEach((ln,k)=>{
+          const tx=c.a==="r"?x+c.w-PAD-sw(ln,FS,false):x+PAD;
+          ops+=T(tx,y-PV-7.5-k*LH,ln,c.b?2:1,FS,"0.1 0.1 0.1");
+        });x+=c.w;
+      });
+      y-=rh;
+    });
+    pages.push(ops);
+    const N=pages.length;
+    pages.forEach((p,i)=>{const s=enc("Page "+(i+1)+" / "+N);pages[i]=p+T((PW-sw(s,8,false))/2,M-4,s,1,8,"0.4 0.4 0.4");});
+    // PDF file
+    let out="%PDF-1.4\n%\xE2\xE3\xCF\xD3\n";const off=[];
+    function add(id,body){off[id]=out.length;out+=id+" 0 obj\n"+body+"\nendobj\n";}
+    add(1,"<< /Type /Catalog /Pages 2 0 R >>");
+    const kids=pages.map((_,i)=>(5+i*2)+" 0 R").join(" ");
+    add(2,"<< /Type /Pages /Kids ["+kids+"] /Count "+N+" >>");
+    add(3,"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>");
+    add(4,"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>");
+    pages.forEach((p,i)=>{
+      const pid=5+i*2,cid=6+i*2;
+      add(pid,"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 "+PW+" "+PH+"] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents "+cid+" 0 R >>");
+      add(cid,"<< /Length "+p.length+" >>\nstream\n"+p+"endstream");
+    });
+    const total=4+N*2,xs=out.length;
+    out+="xref\n0 "+(total+1)+"\n0000000000 65535 f \n";
+    for(let id=1;id<=total;id++)out+=String(off[id]).padStart(10,"0")+" 00000 n \n";
+    out+="trailer\n<< /Size "+(total+1)+" /Root 1 0 R >>\nstartxref\n"+xs+"\n%%EOF";
+    const u=new Uint8Array(out.length);for(let i=0;i<out.length;i++)u[i]=out.charCodeAt(i)&255;
+    return new Blob([u],{type:"application/pdf"});
+  }
+  function z(x){return x<10?"0"+x:""+x;}
+  function stamp(){const d=new Date();return d.getFullYear()+z(d.getMonth()+1)+z(d.getDate())+"_"+z(d.getHours())+z(d.getMinutes());}
+  function make(){
+    const q=$("q").value.trim().toLowerCase(),ws=q?q.split(/\s+/):[];
+    const ml=OPT.filter(o=>o[1]===mode)[0][0],d=new Date();
+    const when=z(d.getDate())+"-"+z(d.getMonth()+1)+"-"+d.getFullYear()+" "+z(d.getHours())+":"+z(d.getMinutes());
+    if(view==="home"&&!q){
+      const g=groups();
+      return {name:"Group_List",blob:build("Group List","Groups: "+g.length+"   |   "+when,
+        [{t:"No.",w:34},{t:"Group",wrap:1,b:1},{t:"Products",w:70,a:"r"},{t:"Avg Discount",w:100,a:"r"}],
+        g.map((x,i)=>[i+1,x[0],x[1],x[2].replace(/^Disc\s*/,"")]))};
+    }
+    let list,title;
+    if(q&&view==="home"){list=DATA.filter(r=>matchAll(r,ws));title='Search: "'+q+'"';}
+    else{
+      list=view==="__all"?DATA:DATA.filter(r=>r[2]===view);
+      if(q)list=list.filter(r=>matchAll(r,ws));
+      if(sortOn&&view!=="__all")list=sizeSort(list);
+      title=view==="__all"?"All Products":"Group: "+view;
+    }
+    if(!list.length)return null;
+    return {name:title.replace(/^Group: /,"").replace(/^Search: /,"Search_"),blob:build(title,"Products: "+list.length+"   |   Rate: "+ml+"   |   "+when,
+      [{t:"No.",w:34},{t:"Product Name",wrap:1},{t:ml+" (Rs.)",w:110,a:"r",b:1}],
+      list.map((r,i)=>[i+1,r[1],nv(gv(r,mode))]))};
+  }
+  async function go(){
+    if(TAB!=="all"){toast("PDF sirf All Data me hota hai");return;}
+    if(!DATA.length){toast("Pehle CSV load karo");return;}
+    toast("PDF ban rahi hai…",8000);
+    try{
+      const r=make();
+      if(!r){toast("Kuch nahi mila, PDF nahi bani");return;}
+      const fn="BALAJI_"+r.name.replace(/[^A-Za-z0-9]+/g,"_").replace(/^_+|_+$/g,"").slice(0,40)+"_"+stamp()+".pdf";
+      const file=new File([r.blob],fn,{type:"application/pdf"});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){
+        try{await navigator.share({files:[file],title:"BALAJI PIPE APP DATA"});toast("PDF share ho gayi");return;}catch(e){if(e&&e.name==="AbortError"){toast("Share cancel hua");return;}}
+      }
+      const url=URL.createObjectURL(r.blob),a=document.createElement("a");a.href=url;a.download=fn;document.body.appendChild(a);a.click();a.remove();
+      setTimeout(()=>URL.revokeObjectURL(url),60000);toast("PDF save: "+fn,3500);
+    }catch(e){toast("PDF nahi ban payi: "+(e&&e.message||e),4000);}
+  }
+  G("pdfFab").addEventListener("click",e=>{e.stopPropagation();if(!G("fabItems").hidden)G("fabMain").click();setTimeout(go,120);});
+  return {go:go,make:make};
+})();
 $("tHc").onclick=function(){setTab(TAB==="hc"?"all":"hc")};
 SO.sync(DATA);
 showMeta();
 render();
+</script>
+<script>
+if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}
 </script>
 </body>
 </html>
