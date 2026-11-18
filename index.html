@@ -281,8 +281,9 @@ h2{font-size:14px;color:var(--mut);margin:12px 4px 8px;font-weight:600;display:f
 #hc .oc b{font-size:15px;color:var(--ok)}
 #hc .pr .stp{width:30px;height:30px;font-size:18px}#hc .pr .st input{width:40px;padding:4px 2px;font-size:14px}
 #hc .three .st input{width:44px}
+#acc_k11 .pr .st input{width:52px}#acc_k11 .rw>.cell{flex:1;justify-content:space-between}
 .vb{border-bottom:3px solid var(--pri);padding-bottom:4px;margin-bottom:6px}
-#acc_k7 .ks{border-top:0;margin-top:4px;padding-top:0}
+#acc_k7 .ks,#acc_k11 .ks{border-top:0;margin-top:4px;padding-top:0}
 .pkb{position:relative;overflow:hidden;border-radius:12px;padding:2.5px;flex:1 1 0;min-width:0}
 .pkb::before{content:"";position:absolute;left:50%;top:50%;width:420px;height:420px;margin:-210px 0 0 -210px;background:conic-gradient(#7dd3fc,#6ee7b7,#bae6fd,#4ade80,#7dd3fc);animation:spin 3s linear infinite}
 .pki{position:relative;background:var(--white);border-radius:9.5px;padding:4px 8px;text-align:center;line-height:1.15}
@@ -435,6 +436,13 @@ tr.ponly{display:none}
 .shotfab{background:linear-gradient(145deg,#19c2b0,#0b7f93)!important;box-shadow:0 6px 16px rgba(11,127,147,.4),inset 0 1px 0 rgba(255,255,255,.4)!important}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:80;background:#111;color:#fff;border-radius:22px;padding:11px 18px;font-size:14px;font-weight:700;max-width:88vw;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .toast[hidden]{display:none}
+.pdfsheet{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center;padding:0 12px calc(14px + env(safe-area-inset-bottom,0px))}
+.pdfsheet[hidden]{display:none}
+.pdfcard{width:100%;max-width:440px;background:var(--card);color:var(--tx);border:1px solid var(--ln);border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:9px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.pdft{font-weight:800;font-size:16px;color:var(--pri);text-align:center;padding:2px 0 4px}
+.pdfcard button{padding:13px 14px;text-align:left;background:var(--bg);color:var(--tx);border:1px solid var(--ln);font-weight:700;font-size:15px;border-radius:12px;line-height:1.3}
+.pdfcard button small{display:block;font-weight:600;font-size:12.5px;color:var(--mut);margin-top:2px}
+.pdfcard button.pdfx{text-align:center;background:transparent;border-color:transparent;color:var(--mut)}
 .pdffab{background:linear-gradient(145deg,#ff6b6b,#d6336c)!important;box-shadow:0 6px 16px rgba(214,51,108,.4),inset 0 1px 0 rgba(255,255,255,.4)!important}
 .calfab{background:linear-gradient(145deg,#ffa23d,#e8590c)!important;box-shadow:0 6px 16px rgba(232,89,12,.4),inset 0 1px 0 rgba(255,255,255,.4)!important}
 #fab[data-tab="all"] .so-only{display:none}
@@ -477,6 +485,7 @@ tr.ponly{display:none}
 </div>
 <div id="fab" class="noprint fabwrap" data-tab="all"><div id="copyMsg" class="cmsg"></div><div id="copyMenu" class="cmenu" hidden><button type="button" data-m="code">Copy Code · Qty</button><button type="button" data-m="name">Copy Product · Qty</button><button type="button" data-m="sheet">Copy Excel Sheet</button></div><div id="fabItems" class="fabitems" hidden><div class="fabrow all-only"><span class="fablab">Screenshot</span><button id="shotFab" class="copyfab shotfab" type="button" aria-label="Screenshot" title="Screenshot">📸</button></div><div class="fabrow all-only"><span class="fablab">PDF</span><button id="pdfFab" class="copyfab pdffab" type="button" aria-label="PDF" title="PDF">📄</button></div><div class="fabrow"><span class="fablab">Calculator</span><button id="calcFab" class="copyfab calfab" type="button" aria-label="Calculator" title="Calculator">🧮</button></div><div class="fabrow so-only"><span class="fablab">Database</span><button id="dbBtn" class="copyfab dbfab" type="button" aria-label="Database" title="Database">🗄️</button></div><div class="fabrow so-only"><span class="fablab">Copy</span><button id="copyBtn" class="copyfab" type="button" aria-label="Copy" title="Copy">📋</button></div></div><button id="fabMain" class="fabmain" type="button" aria-label="Menu" title="Menu">＋</button></div>
 <div id="toast" class="toast noprint" hidden></div>
+<div id="pdfSheet" class="pdfsheet noprint" hidden><div class="pdfcard"><div class="pdft">PDF kaisi chahiye?</div><button type="button" data-k="s">📄 Simple PDF<small id="pdfS1">Product Name + Rate</small></button><button type="button" data-k="ld">📄 List + Disc PDF<small id="pdfS2">Product Name · List · Disc · Net Rate</small></button><button type="button" class="pdfx" data-k="x">Cancel</button></div></div>
 <nav class="tabs noprint" id="bnav"><button class="tab on" id="tAll" type="button"><span class="ti">📋</span><span>All Data</span></button><button class="tab" id="tSo" type="button"><span class="ti">🧾</span><span>Sale Order</span></button><button class="tab" id="tHc" type="button"><span class="ti">🧮</span><span>Calculator</span></button></nav>
 <div id="panel">
 <p><b>CSV file chuno.</b> Columns: A Code, B Name, F Group, W Sale List, Y Discount. Net Rate app khud nikalega.</p>
@@ -676,6 +685,7 @@ tr.ponly{display:none}
 <div class="hcard acc" id="acc_k4"><button class="acch" type="button"><span>4) Purch List Disc + MU &gt; Sale List</span><span class="sum" id="sum_k4"></span><span class="chev">›</span></button><div class="accb"><div class="fr"><label for="pl">Purch list</label><input id="pl" type="text" inputmode="decimal" value="0" data-plain="1"></div><div class="fr rw pr"><div class="cell"><small>P-Disc %</small><input id="pd2" type="text" inputmode="decimal" value="0"></div><div class="cell"><small>A/D %</small><input id="ad2" type="text" inputmode="decimal" value="0"></div></div><div class="fr rw "><input id="gst2" type="text" value="0"><div class="oc "><small>TOTAL</small><b class="out" id="tot2">-</b></div></div><div class="fr rw "><div class="oc l"><small>SALE RATE</small><b class="out" id="sr">-</b></div><div class="cell"><small>MU %</small><input id="mu2" type="text" inputmode="decimal" value="15"></div></div><div class="fr rw "><div class="oc l"><small>SALE LIST FINAL</small><b class="out" id="slf">-</b></div><div class="cell"><small>Disc %</small><input id="sld" type="text" inputmode="decimal" value="0"></div></div></div></div>
 <div class="hcard acc" id="acc_k6"><button class="acch" type="button"><span>6) ELE BEND Calculation</span><span class="sum" id="sum_k6"></span><span class="chev">›</span></button><div class="accb"><div class="fr rw pr"><div class="cell"><small>Weight</small><input id="wt" type="text" inputmode="decimal" value="27.5"></div><div class="cell"><small>Rate</small><input id="rt" type="text" inputmode="decimal" value="98"></div></div><div class="fr rw "><div class="oc l"><small>COST BDL</small><b class="out" id="cb">-</b></div><div class="cell"><small>Labour</small><input id="lb" type="text" inputmode="decimal" value="650"></div></div><div class="fr rw pr"><div class="cell"><small>Pipe Qty</small><input id="pq" type="text" inputmode="decimal" value="50"></div><div class="cell"><small>Casting</small><input id="ct" type="text" inputmode="decimal" value="17"></div></div><div class="fr rw "><div class="oc l"><small>COST PER PC</small><b class="out" id="cpp">-</b></div><div class="cell"><small>MU %</small><input id="mu4" type="text" inputmode="decimal" value="20"></div></div><div class="fr rw "><div class="oc l"><small id="k6lab">BASIC</small><b class="out" id="k6out">-</b></div><input id="gst4" type="text" value="18"></div><div class="fr rw pr"><div class="oc l"><small>FINAL NET RATE</small><b class="out" id="fnr">-</b></div><div class="cell"><small>List</small><input id="sl4" type="text" inputmode="decimal" value="8"></div><div class="cell"><small>Disc</small><input id="sd4" type="text" inputmode="decimal" value="38"></div></div><div class="fm">COST BDL = Rate × Weight + Labour. Cost per pc = BDL ÷ (Pipe Qty × Casting). GST OFF = BASIC (Cost ÷ (1−MU)), GST ON = INCLUDING RATE (Basic × (1+GST)). Disc apne aap neeche round hota hai, +/− se badal sakte ho. Final = List × (1−Disc) × (1+GST).</div></div></div>
 <div class="hcard acc" id="acc_k7"><button class="acch" type="button"><span>7) Orient to other Brand compare</span><span class="sum" id="sum_k7"></span><span class="chev">›</span></button><div class="accb"><div class="fr rw two"><input id="s5g" type="text" value="18"><input id="s5sync" type="checkbox" checked></div><div class="vb"><div class="ks">Orient Plast</div><div class="fr"><label for="s5l1">List<b id="s5sz" style="margin-left:6px">110/6</b></label><input id="s5l1" type="text" inputmode="decimal" value="1600"></div><div class="fr rw three"><div class="cell"><small>Disc</small><input id="s5d1" type="text" inputmode="decimal" value="47"></div><input id="s5a1" type="text" value="3" data-cyc="7" data-lab="AD"><input id="s5c1" type="text" value="0" data-cyc="7" data-lab="CD"></div><div class="fr"><label>Net Rate</label><b class="out" id="s5n1">-</b></div></div><div class="vb"><div class="ks">Truplast</div><div class="fr"><label for="s5l2">List<b id="s5sz2" style="margin-left:6px">110/6</b></label><input id="s5l2" type="text" inputmode="decimal" value="1190"></div><div class="fr rw three"><div class="cell"><small>Disc</small><input id="s5d2" type="text" inputmode="decimal" value="26"></div><input id="s5a2" type="text" value="3" data-cyc="7" data-lab="AD"><input id="s5c2" type="text" value="0" data-cyc="7" data-lab="CD"></div><div class="fr"><label>Net Rate</label><b class="out" id="s5n2">-</b></div></div><div class="vb"><div class="ks">Neroplast</div><div class="fr"><label for="s5l3">List<b id="s5sz3" style="margin-left:6px">110/6</b></label><input id="s5l3" type="text" inputmode="decimal" value="1503"></div><div class="fr rw three"><div class="cell"><small>Disc</small><input id="s5d3" type="text" inputmode="decimal" value="44"></div><input id="s5a3" type="text" value="3" data-cyc="7" data-lab="AD"><input id="s5c3" type="text" value="0" data-cyc="7" data-lab="CD"></div><div class="fr"><label>Net Rate</label><b class="out" id="s5n3">-</b></div></div><div class="fr"><label>Sasta (kam Net Rate)</label><span class="out best" id="s5best">-</span></div><div class="fm">Net Rate = List × (1−Disc) × (1−AD) × (1−CD) × (1+GST). List Sync hara ho to teeno list ek saath badalti hain.</div></div></div>
+<div class="hcard acc" id="acc_k11"><button class="acch" type="button"><span>11) ASTRAL to other Brand compare</span><span class="sum" id="sum_k11"></span><span class="chev">›</span></button><div class="accb"><div class="fr rw two"><input id="q11g" type="text" value="18"><input id="q11sync" type="checkbox" checked></div><div class="vb"><div class="ks">ASTRAL (Disc 1.10.2026)</div><div class="fr"><label for="q11l1">List<b id="q11sz" style="margin-left:6px">110/6</b></label><input id="q11l1" type="text" inputmode="decimal" value="3252"></div><div class="fr"><label for="q11d1">Disc %</label><input id="q11d1" type="text" inputmode="decimal" value="42.75"></div><div class="fr rw pr"><div class="cell"><small>AD</small><input id="q11a1" type="text" inputmode="decimal" value="17"></div><div class="cell"><small>CD</small><input id="q11c1" type="text" inputmode="decimal" value="0"></div></div><div class="fr rw"><div class="oc l"><small>Total Disc</small><b class="out" id="q11td1">-</b></div><div class="oc"><small>Net Rate</small><b class="out" id="q11n1">-</b></div></div></div><div class="vb"><div class="ks">Finolex</div><div class="fr"><label for="q11l2">List<b id="q11sz2" style="margin-left:6px">110/6</b><b id="q11ty" style="margin-left:6px">AGRI</b></label><input id="q11l2" type="text" inputmode="decimal" value="3486"></div><div class="fr rw pr"><div class="cell"><small>PLUM</small><input id="q11pl" type="text" inputmode="decimal" value="59.30"></div><div class="cell"><small>AGRI</small><input id="q11ag" type="text" inputmode="decimal" value="55.70"></div></div><div class="fr rw pr"><div class="cell"><small>AD</small><input id="q11a2" type="text" inputmode="decimal" value="0"></div><div class="cell"><small>CD</small><input id="q11c2" type="text" inputmode="decimal" value="0"></div></div><div class="fr rw"><div class="oc l"><small>Total Disc</small><b class="out" id="q11td2">-</b></div><div class="oc"><small>Net Rate</small><b class="out" id="q11n2">-</b></div></div></div><div class="vb"><div class="ks">BPC ASTRAL (W.E.F. 01.10.2026)</div><div class="fr"><label for="q11l3">List<b id="q11sz3" style="margin-left:6px">110/6</b></label><input id="q11l3" type="text" inputmode="decimal" value="3252"></div><div class="fr"><label for="q11d3">Disc % (size ke hisaab se)</label><input id="q11d3" type="text" inputmode="decimal" value="49.5"></div><div class="fr rw pr"><div class="cell"><small>AD</small><input id="q11a3" type="text" inputmode="decimal" value="0"></div><div class="cell"><small>CD</small><input id="q11c3" type="text" inputmode="decimal" value="0"></div></div><div class="fr rw"><div class="oc l"><small>Total Disc</small><b class="out" id="q11td3">-</b></div><div class="oc"><small>Net Rate</small><b class="out" id="q11n3">-</b></div></div></div><div class="fr"><label>Sasta (kam Net Rate)</label><span class="out best" id="q11best">-</span></div><div class="fm">Astral: List × (1−Disc) × (1−AD) × (1−CD) × (1+GST). Finolex: 15 kg par PLUM, 6 / 4 kg par AGRI disc apne aap lagta hai. BPC Astral: disc BPC list (01.10.2026) se size ke hisaab se apne aap lagta hai. Jis size ki list nahi hai wahan Net Rate "-" aata hai. List Sync hara ho to teeno list ek saath badalti hain.</div></div></div>
 <div class="hcard acc" id="acc_k8"><button class="acch" type="button"><span>8) ASTRAL Fab Bend calculation</span><span class="sum" id="sum_k8"></span><span class="chev">›</span></button><div class="accb"><div class="fr"><label for="s6l">List<b id="s6sz" style="margin-left:6px">110mm 6kg</b></label><input id="s6l" type="text" inputmode="decimal" value="3252"></div><div class="fr"><label for="s6d">DISCOUNT %</label><input id="s6d" type="text" inputmode="decimal" value="55.83"></div><div class="fr"><label>BASIC</label><b class="out" id="s6basic">-</b></div><div class="fr rw pr"><div class="cell"><small>Cutting</small><input id="s6c" type="text" inputmode="decimal" value="10"></div><div class="cell"><small>Labour</small><input id="s6lb" type="text" inputmode="decimal" value="35"></div></div><div class="fr"><label>COST</label><b class="out" id="s6cost">-</b></div><div class="fr"><label for="s6mu">MU %</label><input id="s6mu" type="text" inputmode="decimal" value="20"></div><div class="fr rw "><input id="gst6" type="text" value="18"><div class="oc "><small id="s6sgl">SALE GST</small><b class="out" id="s6sg">-</b></div></div><div class="fr rw "><div class="oc l"><small>SALE LIST FINAL</small><b class="out" id="s6slf">-</b></div><div class="cell"><small>Disc %</small><input id="s6fd" type="text" inputmode="decimal" value="0"></div></div><div class="fr"><label for="s6sl">Sale List</label><input id="s6sl" type="text" inputmode="decimal" value="320"></div><div class="fr"><label for="s6sd">Discount %</label><input id="s6sd" type="text" inputmode="decimal" value="35"></div><div class="fr"><label>Net Rate</label><b class="out" id="s6net">-</b></div><div class="fm">BASIC = List × (1−Disc). COST = BASIC ÷ Cutting + Labour. SALE GST (GST ON) ya BASIC (GST OFF) = COST ÷ (1−MU) × (1+GST). Net Rate = Sale List × (1−Discount) × (1+GST).</div></div></div>
 </div></div>
 <div id="p9sheet" class="modal"><div class="sheet" id="p9in"></div></div>
@@ -1696,23 +1706,26 @@ const KC=(function(){
 const E=id=>document.getElementById(id);
 const v=id=>parseFloat(E(id).value)||0;
 const t=(id,x,m)=>{E(id).textContent=isFinite(x)?(m==="%"?x.toFixed(2)+" %":"₹ "+f2(x)):"-"};
-let manual4=false;
+let manual4=false;let typ2="A";
 const TB={
  s5l1:{lab:"s5sz",k:8,t:[["25/15",375],["32/15",575],["40/15",775],["50/15",975],["50/6",575],["63/6",775],["75/6",975],["90/6",1250],["110/6",1600],["140/6",3700],["160/6",4350]]},
  s5l3:{lab:"s5sz3",k:8,t:[["25/15",345],["32/15",536],["40/15",733],["50/15",920],["50/6",420],["63/6",731],["75/6",907],["90/6",1109],["110/6",1503],["140/6",3634],["160/6",4843]]},
  s6l:{lab:"s6sz",k:9,t:[["20mm 15kg", 432, 47.95, 40, 2, 15], ["25mm 15kg", 570, 57.17, 38, 2.25, 20], ["32mm 15kg", 864, 57.69, 32, 3.25, 30], ["40mm 15kg", 1152, 56.34, 27, 4.5, 45], ["50mm 15kg", 1488, 56.31, 22, 6.5, 70], ["50mm 6kg", 738, 52.11, 22, 7.5, 45], ["63mm 6kg", 1200, 52.11, 18, 12, 80], ["75mm 6kg", 1614, 56.45, 16, 14, 105], ["90mm 6kg", 2334, 52.11, 14, 16, 175], ["110mm 6kg", 3252, 55.83, 10, 35, 320], ["140mm 6kg", 5592, 56.59, 8, 75, 800], ["160mm 6kg", 7038, 56.46, 7, 130, 1200], ["180mm 6kg", 9324, 57.15, 6, 200, 1700], ["200mm 6kg", 11436, 56.33, 5, 250, 2450]],fill:r=>{[["s6d",r[2]],["s6c",r[3]],["s6lb",r[4]],["s6sl",r[5]]].forEach(([id,x])=>document.getElementById(id).value=x);}},
- s5l2:{lab:"s5sz2",k:8,t:[["25/15",285],["32/15",425],["40/15",580],["50/15",740],["50/6",375],["63/6",580],["75/6",750],["90/6",920],["110/6",1190],["140/6",2900],["160/6",3800]]}
+ s5l2:{lab:"s5sz2",k:8,t:[["25/15",285],["32/15",425],["40/15",580],["50/15",740],["50/6",375],["63/6",580],["75/6",750],["90/6",920],["110/6",1190],["140/6",2900],["160/6",3800]]},
+ q11l1:{lab:"q11sz",k:10,t:[["20/15",432,0],["25/15",570,17.72],["32/15",864,18.71],["40/15",1152,16.12],["50/15",1488,16.06],["40/6",492,8],["50/6",738,8],["63/6",1200,8],["75/6",1614,17],["90/6",2334,8],["110/6",3252,17],["125/6",4512,0],["140/6",5592,16.59],["160/6",7038,16.35],["180/6",9324,17.68],["200/6",11436,16.1],["225/6",14478,0],["250/6",18078,0],["280/6",22488,0],["315/6",29928,0],["63/4",822,15.42],["75/4",1140,17.63],["90/4",1572,14.55],["110/4",2232,17],["125/4",3144,0],["140/4",3834,17.08],["160/4",4950,15.92],["180/4",6654,19.78],["200/4",7902,17.27],["225/4",10266,0],["250/4",12588,0],["280/4",14898,0],["315/4",19464,0]],fill:r=>{E("q11a1").value=r[2];}},
+ q11l2:{lab:"q11sz2",k:10,t:[["20/15",435,"P"],["25/15",591,"P"],["32/15",888,"P"],["40/15",1170,"P"],["50/15",1497,"P"],["40/6",504,"A"],["50/6",756,"A"],["63/6",1200,"A"],["75/6",1671,"A"],["90/6",2409,"A"],["110/6",3486,"A"],["125/6",4602,"A"],["140/6",5706,"A"],["160/6",7383,"A"],["180/6",9495,"A"],["200/6",11634,"A"],["225/6",0,"A"],["250/6",19026,"A"],["280/6",23820,"A"],["315/6",30348,"A"],["63/4",834,"A"],["75/4",1182,"A"],["90/4",1653,"A"],["110/4",2403,"A"],["125/4",0,"A"],["140/4",3912,"A"],["160/4",5106,"A"],["180/4",6624,"A"],["200/4",8037,"A"],["225/4",0,"A"],["250/4",0,"A"],["280/4",0,"A"],["315/4",0,"A"]],fill:r=>{typ2=r[2];}},
+ q11l3:{lab:"q11sz3",k:10,t:[["20/15",432,40.5],["25/15",570,51],["32/15",864,51.5],["40/15",1152,50],["50/15",1488,50],["40/6",492,45],["50/6",738,45],["63/6",1200,45],["75/6",1614,50],["90/6",2334,45],["110/6",3252,49.5],["125/6",4512,40.5],["140/6",5592,50.5],["160/6",7038,50.5],["180/6",9324,51],["200/6",11436,50],["225/6",14478,40.5],["250/6",18078,40.5],["280/6",22488,40.5],["315/6",29928,40.5],["63/4",822,49.5],["75/4",1140,48.5],["90/4",1572,49],["110/4",2232,49],["125/4",3144,40.5],["140/4",3834,50.5],["160/4",4950,50],["180/4",6654,52.5],["200/4",7902,51],["225/4",10266,40.5],["250/4",12588,40.5],["280/4",14898,40.5],["315/4",19464,40.5]],fill:r=>{E("q11d3").value=r[2];}}
 };
 const root=E("kc");
-const IDS=["b8","b8g","b8ad","b8cd","pd1","ad1","cd1","gst1","mu1","pl","pd2","ad2","gst2","mu2","sld","rt","wt","lb","pq","ct","mu4","gst4","sl4","sd4","s5g","s5l1","s5d1","s5a1","s5c1","s5l2","s5d2","s5a2","s5c2","s5l3","s5d3","s5a3","s5c3","s6l","s6d","s6c","s6lb","s6mu","gst6","s6sl","s6sd","s6fd"];
-const GST=["b8g","gst1","gst2","gst4","s5g","gst6"];
+const IDS=["b8","b8g","b8ad","b8cd","pd1","ad1","cd1","gst1","mu1","pl","pd2","ad2","gst2","mu2","sld","rt","wt","lb","pq","ct","mu4","gst4","sl4","sd4","s5g","s5l1","s5d1","s5a1","s5c1","s5l2","s5d2","s5a2","s5c2","s5l3","s5d3","s5a3","s5c3","s6l","s6d","s6c","s6lb","s6mu","gst6","s6sl","s6sd","s6fd","q11g","q11l1","q11d1","q11a1","q11c1","q11l2","q11pl","q11ag","q11a2","q11c2","q11l3","q11d3","q11a3","q11c3"];
+const GST=["b8g","gst1","gst2","gst4","s5g","gst6","q11g"];
 function refresh(){
   GST.forEach(id=>{const b=E("gb_"+id);if(b){const on=v(id)===18;b.className="gt "+(on?"g18":"g0");b.textContent="GST "+(on?18:0);}});
   {const b8=E("gb_b8g");if(b8){const on=v("b8g")===18;b8.className="gt "+(on?"g18":"g0r");b8.textContent=on?"GST 18 ON":"GST OFF";}}
   root.querySelectorAll("input[data-cyc]").forEach(i=>{const b=E("gb_"+i.id),n=v(i.id);if(b){b.className="gt "+(n>0?"g18":"g0r");b.textContent=i.dataset.lab+" "+n;}});
   {const l=E("s6sgl");if(l)l.textContent=v("gst6")===18?"SALE GST":"BASIC";}
   {const l=E("k6lab");if(l)l.textContent=v("gst4")===18?"INCLUDING RATE":"BASIC";}
-  const sy=E("s5sync"),sb=E("gb_s5sync");if(sy&&sb){sb.className="gt "+(sy.checked?"g18":"g0r");sb.textContent="List Sync";}
+  ["s5sync","q11sync"].forEach(id=>{const sy=E(id),sb=E("gb_"+id);if(sy&&sb){sb.className="gt "+(sy.checked?"g18":"g0r");sb.textContent="List Sync";}});
 }
 function calc(){
   const bill=v("b8"),gon=v("b8g")===18,basic=gon?bill/1.18:bill,disc=basic*(1-(1-v("b8ad")/100)*(1-v("b8cd")/100));
@@ -1735,12 +1748,26 @@ function calc(){
   const w=arr.filter(x=>x[1]===mn).map(x=>x[0]).join(" = ");
   const nxt=arr.map(x=>x[1]).filter(x=>x>mn).sort((p,q)=>p-q)[0];
   E("s5best").textContent=w+(nxt===undefined?"":" ("+(nxt-mn).toFixed(2)+" kam)");
+  const g11=1+v("q11g")/100;
+  const dd1=v("q11d1")/100,ad1=v("q11a1")/100,cd1=v("q11c1")/100;
+  const dd2=(typ2==="P"?v("q11pl"):v("q11ag"))/100,ad2=v("q11a2")/100,cd2=v("q11c2")/100;
+  const m1=v("q11l1")>0?v("q11l1")*(1-dd1)*(1-ad1)*(1-cd1)*g11:NaN,m2=v("q11l2")>0?v("q11l2")*(1-dd2)*(1-ad2)*(1-cd2)*g11:NaN;
+  t("q11n1",m1);t("q11n2",m2);
+  t("q11td1",(1-(1-dd1)*(1-ad1)*(1-cd1))*100,"%");t("q11td2",(1-(1-dd2)*(1-ad2)*(1-cd2))*100,"%");
+  E("q11ty").textContent=typ2==="P"?"PLUM":"AGRI";
+  const dd3=v("q11d3")/100,ad3=v("q11a3")/100,cd3=v("q11c3")/100;
+  const m3=v("q11l3")>0?v("q11l3")*(1-dd3)*(1-ad3)*(1-cd3)*g11:NaN;
+  t("q11n3",m3);t("q11td3",(1-(1-dd3)*(1-ad3)*(1-cd3))*100,"%");
+  const arr11=[["Astral",m1],["Finolex",m2],["BPC Astral",m3]].filter(x=>isFinite(x[1])),mn11=Math.min.apply(null,arr11.map(x=>x[1]));
+  const w11=arr11.filter(x=>x[1]===mn11).map(x=>x[0]).join(" = ");
+  const nx11=arr11.map(x=>x[1]).filter(x=>x>mn11).sort((p,q)=>p-q)[0];
+  E("q11best").textContent=w11+(nx11===undefined?"":" ("+(nx11-mn11).toFixed(2)+" kam)");
   const bs=v("s6l")*(1-v("s6d")/100),cs=bs/v("s6c")+v("s6lb"),sb6=cs/(1-v("s6mu")/100);
   t("s6basic",bs);t("s6cost",cs);const sg=sb6*(1+v("gst6")/100);t("s6sg",sg);t("s6slf",sg/(1-v("s6fd")/100));
   t("s6net",v("s6sl")*(1-v("s6sd")/100)*(1+v("gst6")/100));
-  [["k2","b8tt"],["k3","sd1"],["k4","sr"],["k6","fnr"],["k7","s5best"],["k8","s6net"]].forEach(x=>{E("sum_"+x[0]).textContent=x[0]==="k7"?w:E(x[1]).textContent;});
+  [["k2","b8tt"],["k3","sd1"],["k4","sr"],["k6","fnr"],["k7","s5best"],["k8","s6net"],["k11","q11best"]].forEach(x=>{E("sum_"+x[0]).textContent=x[0]==="k7"?w:x[0]==="k11"?w11:E(x[1]).textContent;});
   refresh();
-  try{const o={};IDS.forEach(id=>o[id]=E(id).value);o.s5sync=E("s5sync").checked?1:0;localStorage.setItem("kc_v1",JSON.stringify(o));}catch(e){}
+  try{const o={};IDS.forEach(id=>o[id]=E(id).value);o.s5sync=E("s5sync").checked?1:0;o.q11sync=E("q11sync").checked?1:0;localStorage.setItem("kc_v1",JSON.stringify(o));}catch(e){}
 }
 function mkBtn(txt,fn){const b=document.createElement("button");b.type="button";b.className="stp";b.textContent=txt;b.addEventListener("click",fn);return b;}
 
@@ -1768,7 +1795,7 @@ root.querySelectorAll("input").forEach(i=>{
       let k=c.k;
       if(k<0){k=T.findIndex(x=>x[1]===(parseFloat(i.value)||0));if(k<0)k=d>0?-1:T.length;}
       k=Math.min(T.length-1,Math.max(0,k+d));
-      const S5=["s5l1","s5l2","s5l3"];const ids=(S5.includes(i.id)&&E("s5sync").checked)?S5:[i.id];
+      const GR=[["s5sync",["s5l1","s5l2","s5l3"]],["q11sync",["q11l1","q11l2","q11l3"]]],gr=GR.find(g=>g[1].includes(i.id));const ids=(gr&&E(gr[0]).checked)?gr[1]:[i.id];
       ids.forEach(id=>{const cc=TB[id];cc.k=k;cc.i.value=cc.t[k][1];E(cc.lab).textContent=cc.t[k][0];if(cc.fill)cc.fill(cc.t[k]);});calc();};
     w.append(mkBtn("−",()=>go(-1)),i,mkBtn("+",()=>go(1)));
     i.addEventListener("input",()=>{c.k=-1;const k=T.findIndex(x=>x[1]===(parseFloat(i.value)||0));
@@ -1780,7 +1807,7 @@ root.querySelectorAll("input").forEach(i=>{
     const st=1;
     if(i.id==="pq")i.value=d>0?100:50;
     else if(i.id==="lb")i.value=Math.max(0,v("lb")+d*50);
-    else i.value=Math.round((v(i.id)+d*st)*10000)/10000;
+    else{i.value=Math.round((v(i.id)+d*st)*10000)/10000;if(/^q11[ac]\d$/.test(i.id)&&v(i.id)<0)i.value=0;}
     if(i.id==="sd4")manual4=true;else if(mAuto.includes(i.id))manual4=false;
     calc();});
   w.append(mk("−",-1),i,mk("+",1));
@@ -1788,8 +1815,8 @@ root.querySelectorAll("input").forEach(i=>{
   i.addEventListener("focus",()=>{try{i.select();}catch(e){}});
 });
 try{const o=JSON.parse(localStorage.getItem("kc_v1")||"null");if(o){Object.keys(o).forEach(id=>{if(E(id)&&o[id]!=="")E(id).value=o[id];});
-  ["s5l1","s5l2","s5l3","s6l"].forEach(id=>{const c=TB[id],k=c.t.findIndex(x=>x[1]===(parseFloat(E(id).value)||0));c.k=k;E(c.lab).textContent=k>=0?c.t[k][0]:"custom";});
-  E("s5sync").checked=o.s5sync!==0;manual4=o.sd4!==undefined;}}catch(e){}
+  ["s5l1","s5l2","s5l3","s6l","q11l1","q11l2","q11l3"].forEach(id=>{const c=TB[id],k=c.t.findIndex(x=>x[1]===(parseFloat(E(id).value)||0));c.k=k;E(c.lab).textContent=k>=0?c.t[k][0]:"custom";});
+  E("s5sync").checked=o.s5sync!==0;E("q11sync").checked=o.q11sync!==0;{if(E("q11sync").checked){const k0=TB.q11l1.k;if(k0>=0)["q11l2","q11l3"].forEach(id=>{const c=TB[id];if(c.t[k0][1]===(parseFloat(E(id).value)||0)){c.k=k0;E(c.lab).textContent=c.t[k0][0];}});}const c2=TB.q11l2;if(c2.k>=0)typ2=c2.t[c2.k][2];}manual4=o.sd4!==undefined;}}catch(e){}
 calc();
 return {calc:calc};
 })();
@@ -1934,6 +1961,7 @@ return {openFor:openFor};
              K(".")+K("0")+K("MU","op mu","mu")+K("%","op")+K("=","eq");
   // Accordion me sirf ek line (button) — dabane par poori screen ka calculator khulta hai
   root.insertAdjacentHTML("beforeend",'<div class="hcard acc" id="acc_k10"><button class="acch" type="button"><span>10) Calculator</span><span class="sum" id="sum_k10"></span><span class="chev">⤢</span></button></div>\n');
+  {const q11=G("acc_k11");if(q11)root.appendChild(q11);}
   document.body.insertAdjacentHTML("beforeend",'<div id="c10m" class="c10m noprint" hidden><div class="c10top"><b>🧮 Calculator</b><button type="button" id="c10x" aria-label="Band karo">✕</button></div>'+
     '<div class="cdrow"><div class="sb"><div class="cdisp"><div class="cexp" id="c10_exp">&nbsp;</div><div class="cval" id="c10_val">0</div></div></div></div>'+
     '<div class="ckp">'+keys+'</div></div>');
@@ -2194,7 +2222,7 @@ const PDFX=(function(){
   }
   function z(x){return x<10?"0"+x:""+x;}
   function stamp(){const d=new Date();return d.getFullYear()+z(d.getMonth()+1)+z(d.getDate())+"_"+z(d.getHours())+z(d.getMinutes());}
-  function make(){
+  function make(kind){
     const q=$("q").value.trim().toLowerCase(),ws=q?q.split(/\s+/):[];
     const ml=OPT.filter(o=>o[1]===mode)[0][0],d=new Date();
     const when=z(d.getDate())+"-"+z(d.getMonth()+1)+"-"+d.getFullYear()+" "+z(d.getHours())+":"+z(d.getMinutes());
@@ -2213,16 +2241,20 @@ const PDFX=(function(){
       title=view==="__all"?"All Products":"Group: "+view;
     }
     if(!list.length)return null;
-    return {name:title.replace(/^Group: /,"").replace(/^Search: /,"Search_"),blob:build(title,"Products: "+list.length+"   |   Rate: "+ml+"   |   "+when,
+    const nm=title.replace(/^Group: /,"").replace(/^Search: /,"Search_");
+    if(kind==="ld")return {name:nm+"_List_Disc",blob:build(title,"Products: "+list.length+"   |   List + Disc   |   Net: "+ml+"   |   "+when,
+      [{t:"No.",w:30},{t:"Product Name",wrap:1},{t:"List (Rs.)",w:72,a:"r"},{t:"Disc %",w:52,a:"r"},{t:ml+" (Rs.)",w:84,a:"r",b:1}],
+      list.map((r,i)=>[i+1,r[1],nv(r[4]),r[5]==null||isNaN(r[5])?"-":nv(r[5]),nv(gv(r,mode))]))};
+    return {name:nm,blob:build(title,"Products: "+list.length+"   |   Rate: "+ml+"   |   "+when,
       [{t:"No.",w:34},{t:"Product Name",wrap:1},{t:ml+" (Rs.)",w:110,a:"r",b:1}],
       list.map((r,i)=>[i+1,r[1],nv(gv(r,mode))]))};
   }
-  async function go(){
+  async function go(kind){
     if(TAB!=="all"){toast("PDF sirf All Data me hota hai");return;}
     if(!DATA.length){toast("Pehle CSV load karo");return;}
     toast("PDF ban rahi hai…",8000);
     try{
-      const r=make();
+      const r=make(kind);
       if(!r){toast("Kuch nahi mila, PDF nahi bani");return;}
       const fn="BALAJI_"+r.name.replace(/[^A-Za-z0-9]+/g,"_").replace(/^_+|_+$/g,"").slice(0,40)+"_"+stamp()+".pdf";
       const file=new File([r.blob],fn,{type:"application/pdf"});
@@ -2233,7 +2265,21 @@ const PDFX=(function(){
       setTimeout(()=>URL.revokeObjectURL(url),60000);toast("PDF save: "+fn,3500);
     }catch(e){toast("PDF nahi ban payi: "+(e&&e.message||e),4000);}
   }
-  G("pdfFab").addEventListener("click",e=>{e.stopPropagation();if(!G("fabItems").hidden)G("fabMain").click();setTimeout(go,120);});
+  const sheet=G("pdfSheet");
+  function openSheet(){
+    if(TAB!=="all"){toast("PDF sirf All Data me hota hai");return;}
+    if(!DATA.length){toast("Pehle CSV load karo");return;}
+    const ml=OPT.filter(o=>o[1]===mode)[0][0];
+    G("pdfS2").textContent="Product Name · List · Disc · "+ml;
+    G("pdfS1").textContent="Product Name · "+ml;
+    sheet.hidden=false;
+  }
+  sheet.addEventListener("click",e=>{
+    const b=e.target.closest("button[data-k]");
+    if(b){const k=b.getAttribute("data-k");sheet.hidden=true;if(k!=="x")setTimeout(()=>go(k),80);return;}
+    if(e.target===sheet)sheet.hidden=true;
+  });
+  G("pdfFab").addEventListener("click",e=>{e.stopPropagation();if(!G("fabItems").hidden)G("fabMain").click();setTimeout(openSheet,120);});
   return {go:go,make:make};
 })();
 $("tHc").onclick=function(){setTab(TAB==="hc"?"all":"hc")};
