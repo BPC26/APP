@@ -75,6 +75,10 @@ h2{font-size:14px;color:var(--mut);margin:12px 4px 8px;font-weight:600;display:f
 .rt{font-weight:700;color:var(--ok);white-space:nowrap;font-size:16px}
 .det{display:none;margin-top:8px;padding-top:6px;border-top:1px dashed var(--ln);font-size:12px;color:var(--mut)}
 .det div{padding:2px 0;line-height:1.4}.det b{color:var(--tx);font-weight:600}
+.det .stk{margin-top:12px;padding:10px 14px;border-radius:12px;background:rgba(34,197,94,.14);display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:700;color:var(--tx)}
+.det .stk b{font-size:28px;font-weight:800;line-height:1.1;color:#16a34a}
+.det .stk.zero{background:rgba(239,68,68,.13)}.det .stk.zero b{color:#dc2626}
+.det .stk.none{background:rgba(120,130,150,.14)}.det .stk.none b{color:var(--mut)}
 .row.open .det{display:block}.row.open{border-color:var(--pri)}
 .chips{display:flex;gap:6px;overflow-x:auto;margin:0 0 6px;padding-bottom:2px}
 .chip{flex:none;border:1px solid var(--ln);background:var(--card);color:var(--tx);border-radius:20px;padding:7px 13px;font-size:13px;font-weight:600;cursor:pointer}
@@ -714,8 +718,11 @@ function nv(v,pre,suf){return(v==null||isNaN(v))?"-":(pre||"")+Number(v).toLocal
 function gv(r,m){if(m===8)return(r[4]==null||r[5]==null)?null:r[4]*(1-r[5]/100)*0.98*1.18;return r[m]}
 function nl(v){v=String(v==null?"":v).trim();return v?esc(v):"Nill"}
 function ln(l,v){return"<div>"+l+": <b>"+v+"</b></div>"}
+function stkHtml(v){var s=String(v==null?"":v).trim(),t="-",c="none",n=pn(s);
+if(s){if(n==null)t=esc(s);else{t=Number(n).toLocaleString("en-IN",{maximumFractionDigits:3});c=n>0?"":"zero"}}
+return'<div class="stk '+c+'"><span>📦 Stock</span><b>'+t+'</b></div>'}
 function rowHtml(r){return'<div class="row"><div class="rl"><div class="nm">'+esc(r[1])+'</div><div class="rt">'+nv(gv(r,mode),"₹ ")+'</div></div><div class="det">'+
-ln("Product Name",esc(r[1]))+ln("Code",esc(r[0]))+ln("Group",esc(r[2]))+ln("Sale List",nv(r[4],"₹ "))+ln("Discount Rate",nv(r[5],""," %"))+ln("Net Rate",nv(r[3],"₹ "))+ln("Net Rate 3",nv(r[6],"₹ "))+ln("Net Rate 3+2",nv(r[7],"₹ "))+ln("Net Rate 2",nv(gv(r,8),"₹ "))+ln("Remarks",nl(r[13]))+ln("HSN Code",nl(r[14]))+ln("Weight",nl(r[15]))+'<button class="calc pcalc" data-p="'+r.i+'">🛒 Purchase</button><button class="calc" data-c="'+r.i+'">🧮 Calculator</button></div></div>'}
+ln("Product Name",esc(r[1]))+ln("Code",esc(r[0]))+ln("Group",esc(r[2]))+ln("Sale List",nv(r[4],"₹ "))+ln("Discount Rate",nv(r[5],""," %"))+ln("Net Rate",nv(r[3],"₹ "))+ln("Net Rate 3",nv(r[6],"₹ "))+ln("Net Rate 3+2",nv(r[7],"₹ "))+ln("Net Rate 2",nv(gv(r,8),"₹ "))+ln("Remarks",nl(r[13]))+ln("HSN Code",nl(r[14]))+ln("Weight",nl(r[15]))+'<button class="calc pcalc" data-p="'+r.i+'">🛒 Purchase</button><button class="calc" data-c="'+r.i+'">🧮 Calculator</button>'+stkHtml(r[16])+'</div></div>'}
 function chipsHtml(){return'<div class="chips">'+OPT.map(function(o){return'<span class="chip'+(o[1]===mode?" on":"")+'" data-m="'+o[1]+'">'+o[0]+'</span>'}).join("")+'</div>'}
 function dtxt(sum,c){return c?"Disc "+(Math.round(sum/c*100)/100)+" %":"-"}
 function gstats(){var m={},o=[];DATA.forEach(function(r){var g=r[2];if(!(g in m)){m[g]={n:0,s:0,c:0};o.push(g)}var x=m[g];x.n++;if(r[5]!=null&&!isNaN(r[5])){x.s+=r[5];x.c++}});return{m:m,o:o}}
@@ -797,7 +804,7 @@ function parse(t){
     if(!c[1]||!String(c[1]).trim()||sale==null){skipped++;return}
     var raw=String(c[24]==null?"":c[24]),d=pn(raw);if(d==null)d=0;else if(raw.indexOf("%")<0&&d>0&&d<1)d=Math.round(d*1e6)/1e4;
     var k=calc(sale,d);
-    out.push([(c[0]||"").trim(),String(c[1]).trim(),((c[5]||"").trim()||"Other"),k[0],sale,d,k[1],k[2],null,String(c[pc]==null?"":c[pc]).trim(),pn(c[21]),pn(c[20]),String(c[10]==null?"":c[10]).trim(),String(c[48]==null?"":c[48]).trim(),String(c[76]==null?"":c[76]).trim(),String(c[53]==null?"":c[53]).trim()]);
+    out.push([(c[0]||"").trim(),String(c[1]).trim(),((c[5]||"").trim()||"Other"),k[0],sale,d,k[1],k[2],null,String(c[pc]==null?"":c[pc]).trim(),pn(c[21]),pn(c[20]),String(c[10]==null?"":c[10]).trim(),String(c[48]==null?"":c[48]).trim(),String(c[76]==null?"":c[76]).trim(),String(c[53]==null?"":c[53]).trim(),String(c[90]==null?"":c[90]).trim()]);
   });
   INFO={rows:rows.length,cols:rows[0]?rows[0].length:0,head:rows[0]||[],skipped:skipped};
   return out}
